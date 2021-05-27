@@ -1,0 +1,352 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*START*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(100, 100, 100);
+}
+ul{
+    width: 80%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: steelblue;
+}
+li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 60px;
+    background-color: rgb(100, 100, 100);
+    margin: 5px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+li:hover{
+    background-color: #fafafa;
+    color: steelblue;
+}
+nav img{
+    width: 70px;
+    height: 72px;
+    display: inline-block;
+    margin: 5px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+nav img:hover{
+    background-color: #fafafa;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: steelblue;
+    display: flex;
+    padding-left: 50px;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding-right: 20px;
+}
+header{
+    height: 600px;
+    width: 100%;
+    background-image: url(photos/header-photo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+h1{
+    font-size: 50px;
+    margin: 20px;
+    margin-top: 200px;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(244, 260, 294);
+/*
+    animation-name: pradzia;
+    animation-duration: 0.5s;
+*/
+}
+header h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    color: rgb(194, 269, 315);
+    margin: 20px;
+/*
+    animation-name: pradzia;
+    animation-duration: 0.5s;
+*/
+}
+header h3{
+    font-family: 'Rubik', sans-serif;
+    color: rgb(213, 252, 291);
+    margin: 20px;
+    font-size: 30px;
+/*
+    animation-name: pradzia;
+    animation-duration: 0.5s;
+*/
+}
+main p{
+    color:rgb(225,225,225);
+    font-family: 'Ubuntu', sans-serif; 
+}
+section{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+/*apie*/
+.apie{
+    background-color: rgb(100, 160, 210);
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+.apie h3{
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+    margin-bottom: 70px;
+    padding-top: 70px;
+}
+.apie p{
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+    padding-bottom: 100px; 
+}
+/*gallery*/
+.gallery{
+    height: auto;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(100, 160, 210);
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 1.5s ease-in-out; 
+    transform: perspective(500px) rotateY(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.front{
+    background-color: blueviolet;
+}
+.card:hover .front{
+    transform: perspective(500px) rotateY(180deg);
+}
+.back{
+    background-color: crimson;
+    transform: perspective(500px) rotateY(180deg);
+}
+.card:hover .back{
+    transform: perspective(500px) rotateY(360deg);
+}
+.face h2{
+    font-size: 20px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    transform: perspective(500px) translateZ(50px);
+    width: 150px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.9);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.card .foto1{
+    background-image: url(photos/gallery-photos/1darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .foto2{
+    background-image: url(photos/gallery-photos/2darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto3{
+    background-image: url(photos/gallery-photos/3darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto4{
+    background-image: url(photos/gallery-photos/4darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto5{
+    background-image: url(photos/gallery-photos/5darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto6{
+    background-image: url(photos/gallery-photos/6darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto7{
+    background-image: url(photos/gallery-photos/7darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.foto8{
+    background-image: url(photos/gallery-photos/8darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto9{
+    background-image: url(photos/gallery-photos/9darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .foto10{
+    background-image: url(photos/gallery-photos/10darbas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*facebook*/
+.facebook{
+    text-align: center;
+    height: auto;
+    border-radius: 0 0 5px 5px;
+    background-color: rgb(100, 160, 210);
+    margin-bottom: 50px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 20px;
+}
+h4{
+    padding: 20px;
+}
+iframe{
+    margin: 20px;
+    box-shadow: 0 0 5px slategray;
+    padding: 5px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 640px){
+    nav{
+        height: 60px;
+    }
+    ul{
+        height: 60px;
+        width: 65%;
+        padding-left: 40px;
+    }
+    li{
+        height: 50px;
+        width: 80px;
+    }
+    nav img{
+        width: 55px;
+        height: 55px;
+    }
+    nav{
+        padding-left: 5px;
+    }
+}
