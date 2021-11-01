@@ -53,6 +53,71 @@ table {
 body{
     background-color: rgb(100, 100, 100);
 }
+.screen{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(100, 100, 100);
+    z-index: -1;
+    opacity: 0;
+    animation-name: atsiranda;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+}
+.loader{
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    border: 5px solid steelblue;
+    border-left-color: rgb(100, 100, 100);
+    animation-name: sukasi;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.loader2{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 5px solid steelblue;
+    border-right-color: rgb(100, 100, 100);
+    animation-name: sukasi2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes sukasi{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        
+    }
+}
+@keyframes sukasi2{
+    0%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        
+    }
+}
+@keyframes atsiranda{
+    0%{
+        opacity: 1;
+        z-index: 20;
+    }
+    95%{
+        opacity: 1;
+        z-index: 20;
+    }
+    100%{
+        
+    }
+}
 ul{
     width: 80%;
     height: 70px;
