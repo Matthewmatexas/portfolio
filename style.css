@@ -426,13 +426,9 @@ iframe{
         width: 250px;
     }
     #menu{
-        display: inline-block;
-        position: fixed;
-        top: 0;
-        right: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-around;
         flex-direction: column;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -441,19 +437,15 @@ iframe{
         background-color: rgb(100, 100, 100);
     }
     #menu div{
-        width: 80%;
+        width: 70%;
         height: 5px;
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: steelblue;
     }
     #menu2{
-        display: inline-block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
+        display: none;
         align-items: center;
+        justify-content: space-around;
         flex-direction: column;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -462,9 +454,9 @@ iframe{
         background-color: rgb(100, 100, 100);
     }
     #menu2 div{
-        width: 80%;
+        width: 70%;
         height: 5px;
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: steelblue;
     }
     #phone-menu{
