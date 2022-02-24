@@ -16,6 +16,11 @@
         <div class="loader"></div>
         <div class="loader2" style="position: absolute;"></div>
     </div>
+    <!-- <div style="position: fixed; top: 0; z-index: 15; width: 100%; height: auto; background-color: rgba(255, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; color: white; padding: 15px; user-select: none; transition: 0.3s; font-family: 'Ubuntu', sans-serif;" id="ekstremalu">
+        <p style="padding-right: 15px;">⚠️</p>
+        <p style="text-align: center;">DĖL EKSTREMALIOS SITUACIJOS PASKELBTOS LIETUVOJE, ŠIS PUSLAPIS NEBEBUS ATNAUJINAMAS</p>
+        <button style="width: 70px; height: 30px; border: none; background-color: rgb(100, 100, 100); color: white; font-family: 'Ubuntu', sans-serif; border-radius: 15px; margin-left: 15px; cursor: pointer;" onclick="ekstremaliClose()">Uždaryti</button>
+    </div> -->
     <div id="phone-menu">
         <h1 style="text-align: center; margin-top: 70px;">Meniu</h1>
         <button onclick="about()">Apie</button>
@@ -137,6 +142,12 @@
         </section>
     </main>
     <script>
+        function ekstremaliClose() {
+            document.getElementById("ekstremalu").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("ekstremalu").style.display = "none";
+            }, 300);
+        }
         function openMobileNav() {
             document.getElementById("phone-menu").style.bottom = "0";
           document.getElementById("black").style.zIndex = "1";  
