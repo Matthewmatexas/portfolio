@@ -10,17 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&family=Rubik&family=Ubuntu&display=swap" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
-<body>
-    <div class="screen">
-        <img src="photos/logo.png" alt="Matthew" style="position: absolute;">
-        <div class="loader"></div>
-        <div class="loader2" style="position: absolute;"></div>
+<body onload="loadFunction()">
+    <div id="screen">
+        <img src="photos/logo.png" alt="Matthew" style="position: absolute; width: 80px; margin-top: -7px; margin-left: 1px;">
+        <div style="width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; animation: lds-ring 2.2s ease-in-out infinite;">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
     </div>
-    <!-- <div style="position: fixed; top: 0; z-index: 15; width: 100%; height: auto; background-color: rgba(255, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; color: white; padding: 15px; user-select: none; transition: 0.3s; font-family: 'Ubuntu', sans-serif;" id="ekstremalu">
-        <p style="padding-right: 15px;">⚠️</p>
-        <p style="text-align: center;">DĖL EKSTREMALIOS SITUACIJOS PASKELBTOS LIETUVOJE, ŠIS PUSLAPIS NEBEBUS ATNAUJINAMAS</p>
-        <button style="width: 70px; height: 30px; border: none; background-color: rgb(100, 100, 100); color: white; font-family: 'Ubuntu', sans-serif; border-radius: 15px; margin-left: 15px; cursor: pointer;" onclick="ekstremaliClose()">Uždaryti</button>
-    </div> -->
     <div id="phone-menu">
         <h1 style="text-align: center; margin-top: 70px;">Meniu</h1>
         <button onclick="about()">Apie</button>
@@ -47,15 +43,16 @@
             </ul>
         </nav>
     <header>
-        <h1>Labas!</h1>
-        <h2>Aš Matthew</h2>
-        <h3>Kuriu tinklalapius</h3>
+        <h1 id="hvienas" style="transition: 0.3s; margin-left: -200%;">Labas!</h1>
+        <h2 id="hdu" style="transition: 0.3s; margin-left: -200%;">Aš Matas</h2>
+        <h3 id="htrys" style="transition: 0.3s; margin-left: -200%;">Kuriu tinklalapius</h3>
     </header>
     <main id="apie">
         <section class="apie-mane">
             <h3>Apie mane</h3>
             <p style="padding-left: 10px; padding-right: 10px;">Aš esu vienas iš naujų programuotojų, norintis kurti tinklalapius sau ir kitiems:) Mano darbai pateikti žemiau. Kol kas geriausias iš jų yra Moon_astec parduotuvė.</p>
         </section>
+        <div id="cookies"><p>Šis puslapis naudoja slapukus iš Facebook.</p><button onclick="cookiesClose()">OK</button></div>
         <section class="gallery" id="galerija">
             <div class="card" style="border-radius: 10px 10px 10px 10px; margin: 10px;">
                    <div class="face front foto1" style="border-radius: 10px 10px 10px 10px;">
@@ -70,23 +67,23 @@
             
             <div class="card" style="border-radius: 10px 10px 10px 10px; margin: 10px;">
                    <div class="face front foto2" style="border-radius: 10px 10px 10px 10px;">
-                    <h2>Pasaulio stebuklai</h2>
+                    <h2>ETO Security</h2>
                 </div>
                 
                 
                 <div class="face back foto2" style="border-radius: 10px 10px 10px 10px;">
-                    <a href="https://matthewmatexas.github.io/pasaulio-stebuklai/" target="_blank"><span></span></a>
+                    <a href="https://matthewmatexas.github.io/eto-security/" target="_blank"><span></span></a>
                 </div>
             </div>
             
             <div class="card" style="border-radius: 10px 10px 10px 10px; margin: 10px;">
                    <div class="face front foto3" style="border-radius: 10px 10px 10px 10px;">
-                    <h2>Dakaro ralis</h2>
+                    <h2>American BINGO</h2>
                 </div>
                 
                 
                 <div class="face back foto3" style="border-radius: 10px 10px 10px 10px;">
-                    <a href="https://matthewmatexas.github.io/dakaro-ralis/" target="_blank"><span></span></a>
+                    <a href="https://matthewmatexas.github.io/american-bingo/" target="_blank"><span></span></a>
                 </div>
             </div>
             
@@ -125,28 +122,34 @@
             
             <div class="card" style="border-radius: 10px 10px 10px 10px; margin: 10px;">
                    <div class="face front foto7" style="border-radius: 10px 10px 10px 10px;">
-                    <h2>Šunų paroda</h2>
+                    <h2>Mokėjimas kortele</h2>
                 </div>
                 
                 
                 <div class="face back foto7" style="border-radius: 10px 10px 10px 10px;">
-                    <a href="https://matthewmatexas.github.io/sunuparoda/" target="_blank"><span></span></a>
+                    <a href="https://matthewmatexas.github.io/mokejimas/" target="_blank"><span></span></a>
                 </div>
             </div>
         </section>
         <section class="facebook" id="kontaktai">
+            <h3>Kontaktai</h1>
             <p style="padding-left: 10px; padding-right: 10px;">Didelis ačiū - internetinius puslapius padėjo sukurti:</p>
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FITvaikams&tabs=timeline&width=400px&height=100px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400px" height="140px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            <h4>El. paštas: matas.kaspar@gmail.com</h4>
-            <h5>&copy; 2022 Matthew</h5>
+            <h4><a href="mailto:matas.kaspar@gmail.com" style="color:rgb(225,225,225); text-decoration: none;">El. paštas: matas.kaspar@gmail.com</a></h4>
+            <h5 style="color:rgb(225,225,225);">&copy; 2022 Matas</h5>
         </section>
     </main>
     <script>
-        function ekstremaliClose() {
-            document.getElementById("ekstremalu").style.opacity = "0";
-            setTimeout(() => {
-                document.getElementById("ekstremalu").style.display = "none";
-            }, 300);
+        function loadFunction(){
+            setTimeout(() => {    document.getElementById("screen").style.transform = "scale(0)"; }, 1000);
+            setTimeout(() => {    document.getElementById("screen").style.opacity = "0"; }, 1000);
+            setTimeout(() => {    document.getElementById("screen").style.zIndex = "-1"; }, 1000);
+            setTimeout(() => {    document.getElementById("hvienas").style.marginLeft = "0"; }, 1100);
+            setTimeout(() => {    document.getElementById("hdu").style.marginLeft = "0"; }, 1400);
+            setTimeout(() => {    document.getElementById("htrys").style.marginLeft = "0"; }, 1700);
+        }
+        function cookiesClose(){
+            document.getElementById("cookies").style.bottom = "-175px";
         }
         function openMobileNav() {
             document.getElementById("phone-menu").style.bottom = "0";

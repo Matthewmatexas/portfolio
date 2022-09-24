@@ -51,79 +51,64 @@ table {
     scroll-behavior: smooth;
 }
 body{
-    background-color: rgb(100, 100, 100);
+    background-color: lightgrey;
 }
-.screen{
+#screen{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(100, 100, 100);
-    z-index: -1;
-    opacity: 0;
-    animation-name: atsiranda;
-    animation-duration: 4s;
-    animation-timing-function: linear;
+    background-color: lightgrey;
+    opacity: 1;
+    z-index: 100;
+    top: 0;
+    transition: 0.3s;
 }
-.loader{
-    width: 170px;
-    height: 170px;
-    border-radius: 100%;
-    border: 5px solid steelblue;
-    border-left-color: rgb(100, 100, 100);
-    animation-name: sukasi;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-.loader2{
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    border: 5px solid steelblue;
-    border-right-color: rgb(100, 100, 100);
-    animation-name: sukasi2;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-@keyframes sukasi{
-    0%{
-        transform: rotate(360deg);
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 160px;
+    height: 160px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    margin: 16px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: steelblue transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
     }
-    100%{
-        
+    100% {
+      transform: rotate(360deg);
     }
-}
-@keyframes sukasi2{
-    0%{
-        transform: rotate(-360deg);
-    }
-    100%{
-        
-    }
-}
-@keyframes atsiranda{
-    0%{
-        opacity: 1;
-        z-index: 20;
-    }
-    95%{
-        opacity: 1;
-        z-index: 20;
-    }
-    100%{
-        
-    }
-}
+  }
+  
 ul{
     width: 95%;
     height: 70px;
     display: flex;
     justify-content: flex-end;
     background-color: steelblue;
+    border-radius: 0 0 15px 15px;
 }
 #menu{
     display: none;
@@ -143,31 +128,35 @@ li{
     justify-content: center;
     width: 100px;
     height: 60px;
-    background-color: rgb(100, 100, 100);
+    background-color: lightgrey;
     margin: 5px;
-    color: #fff;
+    color: steelblue;
     font-family: 'Rubik', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     transition: 0.3s;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 li:hover{
     background-color: #fafafa;
     color: steelblue;
+    box-shadow: 0 0 15px lightgrey;
 }
 nav img{
-    width: 70px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
     display: inline-block;
     margin: 5px;
+    margin-top: 8px;
     transition: 0.3s;
-    border-radius: 5px;
+    border-radius: 15px;
+    background-color: lightgrey;
 }
 nav img:hover{
     background-color: #fafafa;
+    box-shadow: 0 0 15px lightgrey;
 }
 nav{
-    width: 100%;
+    width: 90%;
     height: 70px;
     background-color: steelblue;
     display: flex;
@@ -175,6 +164,9 @@ nav{
     align-items: center;
     position: fixed;
     z-index: 5;
+    border-radius: 0 0 15px 15px;
+    left: 5%;
+    box-shadow: 0 0 15px lightgrey;
 }
 nav a{
     color: #fff;
@@ -199,6 +191,7 @@ h1{
     margin-top: 200px;
     font-family: 'Ubuntu', sans-serif;
     color: rgb(244, 260, 294);
+    cursor: default;
 /*
     animation-name: pradzia;
     animation-duration: 0.5s;
@@ -209,6 +202,7 @@ header h2{
     font-size: 40px;
     color: rgb(194, 269, 315);
     margin: 20px;
+    cursor: default;
 /*
     animation-name: pradzia;
     animation-duration: 0.5s;
@@ -219,14 +213,50 @@ header h3{
     color: rgb(213, 252, 291);
     margin: 20px;
     font-size: 30px;
+    cursor: default;
 /*
     animation-name: pradzia;
     animation-duration: 0.5s;
 */
 }
+#cookies{
+    width: 90%;
+    height: 50px;
+    background-color: lightgrey;
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px steelblue;
+    border-radius: 15px 15px 0 0;
+    transition: 0.3s;
+}
+#cookies p{
+    color: steelblue;
+}
+#cookies button{
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#cookies button:hover{
+    box-shadow: 0 0 15px steelblue;
+}
 main p{
     color:rgb(225,225,225);
     font-family: 'Ubuntu', sans-serif; 
+    cursor: default;
 }
 section{
     width: 90%;
@@ -235,16 +265,19 @@ section{
 }
 /*apie*/
 .apie{
-    background-color: rgb(100, 160, 210);
+    background-color: steelblue;
     text-align: center;
-    border-radius: 5px 5px 0 0;
+    border-radius: 15px;
     width: 100%;
     overflow: hidden;
 }
 .apie-mane{
-    background-color: rgb(100, 160, 210);
+    background-color: steelblue;
     text-align: center;
-    border-radius: 5px 5px 0 0;
+    border-radius: 15px 15px 0 0;
+}
+.apie-mane:hover h3{
+    font-size: 70px;
 }
 .apie-mane h3{
     color: #fff;
@@ -252,6 +285,8 @@ section{
     font-size: 50px;
     margin-bottom: 70px;
     padding-top: 70px;
+    transition: 0.3s;
+    cursor: default;
 }
 .apie h3{
     color: #fff;
@@ -259,12 +294,14 @@ section{
     font-size: 50px;
     margin-bottom: 70px;
     padding-top: 70px;
+    cursor: default;
 }
 .apie p{
     width: 60%;
     margin: auto;
     font-size: 20px;
     padding-bottom: 100px; 
+    cursor: default;
 }
 /*gallery*/
 .gallery{
@@ -272,7 +309,7 @@ section{
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(100, 160, 210);
+    background-color: steelblue;
     justify-content: center;
     align-items: center;
 }
@@ -313,7 +350,7 @@ section{
     font-size: 20px;
     color: black;
     font-family: 'Poppins', sans-serif;
-    transform: perspective(500px) translateZ(50px);
+    /* transform: perspective(500px) translateZ(50px); */
     width: 150px;
     text-align: center;
     background-color: rgba(255,255,255,0.9);
@@ -322,6 +359,7 @@ section{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    cursor: default;
 }
 .card .foto1{
     background-image: url(photos/gallery-photos/1darbas.jpg);
@@ -383,22 +421,38 @@ section{
 .facebook{
     text-align: center;
     height: auto;
-    border-radius: 0 0 5px 5px;
-    background-color: rgb(100, 160, 210);
+    border-radius: 0 0 15px 15px;
+    background-color: steelblue;
     margin-bottom: 50px;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
     padding-bottom: 20px;
 }
 h4{
     padding: 20px;
+    font-family: 'Rubik', sans-serif;
+    cursor: default;
+}
+h5{
+    cursor: default;
+}
+.facebook h3{
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+    cursor: default;
+}
+.facebook:hover h3{
+    font-size: 70px;
 }
 iframe{
     margin: 20px;
-    box-shadow: 0 0 5px slategray;
+    box-shadow: 0 0 5px slategrey;
     padding: 5px;
     background-color: rgb(100, 100, 100);
-    border-radius: 5px;
+    border-radius: 15px;
 }
 @media only screen and (max-width: 900px){
     nav{
@@ -413,17 +467,39 @@ iframe{
         width: 40px;
         font-size: 11px;
         display: none;
+        margin-top: 5px;
+        margin-right: -1px;
     }
     nav img{
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
+        margin-top: 6px;
+        margin-left: 0;
     }
     nav{
         padding-left: 5px;
     }
+    nav img:hover{
+        box-shadow: none;
+    }
     iframe{
         overflow: hidden;
         width: 250px;
+    }
+    .facebook:hover h3{
+        font-size: 50px;
+    }
+    .apie-mane:hover h3{
+        font-size: 50px;
+    }
+    #cookies{
+        height: 80px;
+        padding-top: 15px;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    #cookies button{
+        width: 90%;
     }
     #menu{
         display: flex;
@@ -438,7 +514,7 @@ iframe{
     }
     #menu div{
         width: 70%;
-        height: 5px;
+        height: 4px;
         border-radius: 15px;
         background-color: steelblue;
     }
@@ -455,21 +531,22 @@ iframe{
     }
     #menu2 div{
         width: 70%;
-        height: 5px;
+        height: 4px;
         border-radius: 15px;
         background-color: steelblue;
     }
     #phone-menu{
         position: fixed;
-        width: 80%;
+        width: 90%;
         height: 100%;
         background-color: steelblue;
         bottom: -100%;
-        right: 0;
+        right: 5%;
         display: block;
         z-index: 2;
         transition: 0.3s;
         overflow: hidden;
+        border-radius: 15px 15px 0 0;
     }
     #phone-menu button{
         width: 90%;
