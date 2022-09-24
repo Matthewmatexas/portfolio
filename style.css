@@ -451,7 +451,7 @@ iframe{
     margin: 20px;
     box-shadow: 0 0 5px slategrey;
     padding: 5px;
-    background-color: rgb(100, 100, 100);
+    background-color: lightgrey;
     border-radius: 15px;
 }
 @media only screen and (max-width: 900px){
